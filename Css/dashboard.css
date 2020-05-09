@@ -1,0 +1,38 @@
+.main_dashboard{
+	margin-left:15%;
+	margin-right:15%;
+}
+
+.main_dashboard_content{
+	color:#fff;
+	padding-top:20px;
+	padding-left:40px;
+	border-radius:5px;
+    width: 60%;
+    height:auto;
+    background-position: center;
+    background-size: cover;
+	background:url('../Assets/image/bg_1.jpg');
+}
+
+.tab{
+	display:flex;
+	width:100%;
+	border-bottom: 1px solid #e5e7ea !important;
+}
+
+.tab p{
+	cursor:pointer;
+	font-family:'product-bold';
+	margin-bottom:0px;
+	margin-top:12px;
+	margin-left:10px;
+	padding-left:7px;
+	padding-right:7px;
+	font-size:13px;
+	transition:all 0.3s ease;
+}
+
+.tab p:hover{
+	opacity:0.4;
+}
