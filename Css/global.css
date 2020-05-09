@@ -98,6 +98,34 @@ a{
 	margin-top:3.5%;
 }
 
+/* Margin right */
+.mr-1{
+	margin-right:1.4%;
+}
+
+.mr-2{
+	margin-right:1.8%;
+}
+
+.mt-3{
+	margin-right:2.4%;
+}
+
+.mr-4{
+	margin-right:3%;
+}
+
+.mr-5{
+	margin-right:3.5%;
+}
+
+
+
+.image-logo{
+	width:40px;
+	height:40px;
+}
+
 .input-text{
 	margin-top:20px;
 }

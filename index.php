@@ -19,7 +19,7 @@
 		<?php include './Components/Header.php' ?>
 
 		<!-- body -->
-		<div style="margin-top:40px">
+		<div style="margin-top:40px;" class="main_dashboard">
 			<?php
 				
 				// dashboard
