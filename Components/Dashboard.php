@@ -2,7 +2,7 @@
 
 	<div class="main_dashboard_content" style="background-position: center;position:relative;">
 		<div class="backdrop"></div>
-		<p class="display-1 mb-1 mt-4 layer-1">Halo, Mau ngapain hari ini?</p>
+		<p class="display-1 mb-1 mt-2 layer-1">Halo, Mau ngapain hari ini?</p>
 		<p class="sub-display-1 mt-1 layer-1" style="color:#fff">Jalan-jalan? perawatan? haus? semua ada disini</p>
 		<div class="flex layer-1 mt-4">
 			<img class="image-logo mr-2" src="./Assets/logo/wafil.png">	
@@ -45,22 +45,24 @@
 	include './Elements/ServiceCard.php';
 ?>
 
-<p class="display-1 mt-3" style="font-size:19px;margin-bottom:9px;">Layanan kami</p>
+<p class="display-1 mt-4" style="font-size:19px;margin-bottom:9px;">Layanan kami</p>
 <p class="sub-display-1" style="font-size:14px;">Jelajahi layanan</p>
 
 <div class="row mt-4">
 	<?php 
 		for($i = 0; $i < sizeof($service_detail); $i++){
 			?>
-			<div class="col-lg-3">
-				<div class="service-card" style="width:100%;margin:0 0 25px 0; height:210px;border: 1px solid <?php echo $service_detail[$i] -> service_color;?> !important;">
-					<div style="padding: 20px 20px 20px 22px;">
-						<i style="font-size:20px;color:<?php echo $service_detail[$i] -> service_color; ?>" class="<?php echo $service_detail[$i] -> service_img; ?> mb-2 mt-3"></i>
-						<p class="service-card-title" style="color:<?php echo $service_detail[$i] -> service_color; ?>"><?php echo $service_detail[$i] -> service_title; ?></p>
-						<p style="color:<?php echo $service_detail[$i] -> service_color; ?>" class="service-card-subtitle"><?php echo $service_detail[$i] -> service_subtitle ?></p>
+			<a class="col-lg-3" href="<?php echo $INDEX_BASE_URL.'?page=vendor_online&service_code='.$service_detail[$i] -> service_code ?>">
+				<div>
+					<div class="service-card" style="width:100%;margin:0 0 25px 0; height:210px;border: 1px solid <?php echo $service_detail[$i] -> service_color;?> !important;">
+						<div style="padding: 20px 20px 20px 22px;">
+							<i style="font-size:20px;color:<?php echo $service_detail[$i] -> service_color; ?>" class="<?php echo $service_detail[$i] -> service_img; ?> mb-2 mt-3"></i>
+							<p class="service-card-title" style="color:<?php echo $service_detail[$i] -> service_color; ?>"><?php echo $service_detail[$i] -> service_title; ?></p>
+							<p style="color:<?php echo $service_detail[$i] -> service_color; ?>" class="service-card-subtitle"><?php echo $service_detail[$i] -> service_subtitle ?></p>
+						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 			<?php
 		}
 	?>

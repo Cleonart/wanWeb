@@ -19,8 +19,6 @@
 				times($INDEX_BASE_URL);
 			}
 		}
-
-		
 	}
 
 	function times($host){
@@ -33,4 +31,6 @@
 			</script>
 		<?php
 	}
+
+	
 ?>

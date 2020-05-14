@@ -7,19 +7,24 @@
 	curl_setopt($curl, CURLOPT_URL, "http://carexports.uk/wan_api/v1/shoppingCart/getAllShoppingCart.php?id_user=".$user_id);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 	$output = json_decode(curl_exec($curl));
-	curl_close($curl);
+	curl_close($curl);	
 ?>
 
+<div style="display:flex;position:relative">
+	<i class="fa fa-shopping-cart" style="font-size:20px;margin-right:20px;margin-top:12px;"></i>
+	<div>
+		<p class="display-1" style="margin-bottom:-2px;">Shopping Cart</p>
+		<p style="margin-bottom:10px;font-family:'product-regular';font-size:14px;margin-bottom:15px;">Item yang kamu pesan masuk disini</p>
+	</div>
+</div>
 
-<p class="display-1">Shopping Cart</p>
-<p style="margin-bottom:10px;font-family:'product-regular';font-size:14px;margin-bottom:15px;">Item yang kamu pesan masuk disini</p>
 <div class="row">
 	<div class="col-lg-8">
 		<?php
 			for($i = 0; $i < sizeof($output); $i++){
 				?>
 				<div style="padding:20px 20px 20px 35px;margin-top:10px;box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px -1px;">
-					<a href="<?php echo $INDEX_BASE_URL . '?page=vendor_detail' ?>">
+					<a href="<?php echo $INDEX_BASE_URL . '?page=vendor_item&vendor_id='.$output[$i] -> vendor_id ?>">
 						<p style="font-family:'product-bold';font-size:18px;margin-top:5px;margin-bottom:0px;"><?php echo $output[$i] -> vendor_name ?></p>
 						<p style="font-family:'product-regular';font-size:13px;margin-top:5px;margin-bottom:15px;"><?php echo $output[$i] -> vendor_id ?></p>
 					</a>
@@ -40,6 +45,12 @@
 						}
 					?>
 				</div>
+				<?php
+			}
+
+			if(sizeof($output) == 0){
+				?>
+				<p style="font-family:'product-regular';font-size:22px;opacity:0.5;">Tidak ada item di shopping cart kamu</p>
 				<?php
 			}
 		?>
